@@ -39,3 +39,6 @@ public class Car {
         scanner.close();
     }
 }
+
+
+//i used object car and attribut name , brand, year in this object oriented java program
