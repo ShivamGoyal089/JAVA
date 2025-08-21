@@ -1,0 +1,75 @@
+import java.util.Scanner;
+public class Car {
+   
+    String brand;
+    String name;
+    int year;
+
+
+    public Car(String brand, String name, int year) {
+        this.brand = brand;
+        this.name = name;
+        this.year = year;
+    }
+
+
+    public void displayInfo() {
+        System.out.println("Car Brand: " + brand);
+        System.out.println("Car Name: " + name);
+        System.out.println("Manufacturing Year: " + year);
+    }
+    
+    public void updateCarInfo(Scanner Scanner) {
+        
+   
+    System.out.println("\n-----update car info -----");
+    
+    System.out.print("Enter new car name:");
+    Scanner.nextLine();
+    this.name = Scanner.nextLine();
+    
+    System.out.print("enter you new car brand");
+    this.brand = Scanner.nextLine();
+    
+    System.out.print("Enter the manufacturing year");
+    this.year = Scanner.nextInt();
+    
+    System.out.println("\n your new car detail has been updated");
+    }
+    
+    
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("enter your car name:");
+        String name = scanner.nextLine();
+        
+        System.out.print("enter your brand:");
+        String brand = scanner.nextLine();
+        
+        System.out.print("enter your manufacturing year:");
+        int year = scanner.nextInt();
+
+        Car myCar = new Car(brand , name , year);
+
+        myCar.displayInfo();
+                
+
+        System.out.print("\nDo you want to update the car info? (yes/no): ");
+        scanner.nextLine(); // consume leftover newline
+        String response = scanner.nextLine();
+
+        if (response.equalsIgnoreCase("yes")) {
+            myCar.updateCarInfo(scanner);
+            System.out.println("\n--- Updated Car Information ---");
+            myCar.displayInfo();
+        } else {
+            System.out.println("\nNo updates made.");
+        }
+        
+        
+        scanner.close();
+    }
+}
