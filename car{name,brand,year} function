@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class Car {
+   
+    String brand;
+    String name;
+    int year;
+
+
+    public Car(String brand, String name, int year) {
+        this.brand = brand;
+        this.name = name;
+        this.year = year;
+    }
+
+
+    public void displayInfo() {
+        System.out.println("Car Brand: " + brand);
+        System.out.println("Car Name: " + name);
+        System.out.println("Manufacturing Year: " + year);
+    }
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("enter your car name:");
+        String name = scanner.nextLine();
+        
+        System.out.print("enter your brand:");
+        String brand = scanner.nextLine();
+        
+        System.out.print("enter your manufacturing year:");
+        int year = scanner.nextInt();
+
+        Car myCar = new Car(name , brand , year);
+
+        myCar.displayInfo();
+        
+        scanner.close();
+    }
+}
